@@ -1,0 +1,20 @@
+{
+  "name": "electron-poc",
+  "version": "0.0.0",
+  "description": "electron proof of concept",
+  "main": "main.js",
+  "scripts": {
+    "postinstall": "electron-rebuild",
+    "start": "electron .",
+    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+  },
+  "author": "Malte Blumenthal",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^30.0.6",
+    "electron-rebuild": "^3.2.9"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}

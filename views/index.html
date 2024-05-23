@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8" />
+
+    <title>Index</title>
+</head>
+
+<body>
+    <h1>Welcome to Index</h1>
+    <table id='data'>
+        <thead id='tableHead'></thead>
+        <tbody id='tableBody'></tbody>
+        <script>
+            window.electronAPI.getData().then(data => {
+                //console.log(data);
+                const table = document.getElementById('data');
+                var thead = document.getElementById('tableHead');
+                var tbody = document.getElementById('tableBody');
+                
+                for(const element in data[0])
+                {
+                    var th = document.createElement('th');
+                    th.innerText = element;
+                    thead.appendChild(th);
+                }
+
+                for (const row in data) 
+                {
+                    var tr = document.createElement('tr')
+                    //console.log(`${row}:`);
+                    for(const element in data[row]){
+                        //console.log(`${element}: ${data[row][element]}`);
+                        var td = document.createElement('td');
+                        td.innerHTML = data[row][element];
+                        tr.appendChild(td);
+                    }
+                    tbody.appendChild(tr);
+                }
+            });
+          </script>
+    </table>
+</body>
